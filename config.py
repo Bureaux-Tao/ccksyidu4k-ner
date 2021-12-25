@@ -1,0 +1,9 @@
+maxlen = 200
+epochs = 100
+batch_size = 32
+bert_layers = 4
+crf_lr_multiplier = 1000  # 必要时扩大CRF层的学习率
+model_type = 'albert'
+dropout_rate = 0.1
+max_lr = 1e-3
+lstm_hidden_units = 32
