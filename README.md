@@ -12,8 +12,8 @@ categories），比如疾病、治疗、检查检验等。
 5. 药物： 用于疾病治疗的具体化学物质。
 6. 解剖部位： 指疾病、症状和体征发生的人体解剖学部位。
 
-任务一数据结构： 任务一数据每一行为一个json json key 为['originalText','entities'] 即原文和实体列表 json["entities"]
-为列表，每个元素代表一个实体entity，其中有该实体在原文中的起始位置start_pos,结束位置end_pos,以及实体类型
+任务一数据结构： 任务一数据每一行为一个json json key 为`['originalText','entities']` 即原文和实体列表 `json["entities"]`
+为列表，每个元素代表一个实体entity，其中有该实体在原文中的起始位置`start_pos`,结束位置`end_pos`,以及实体类型
 
 训练样本1000条，提交的测试样本379条，经过处理后转成BIO格式，形如：
 
@@ -44,6 +44,8 @@ ATTENTION:
 - 字与标签之间用tab（"\t"）隔开
 - 其中句子与句子之间使用空行隔开
 - 文件最后以两个换行结束
+
+句长与数量信息可以运行`statistic.py`以查看
 
 ## Project Structure
 
@@ -77,11 +79,13 @@ ATTENTION:
 ├── path.py                                     所有路径
 ├── predict.py                                  模型预测输出
 ├── preprocess.py                               数据预处理
+├── statistic.py                                统计句长与数量信息，以便调整和设置maxlen
 ├── report                                      评估报告，由evaluate.py生成
 │   ├── f1.csv                                  每轮保存模型的总体F1
 │   ├── final_test_set.out
 │   └── nohup_evaluate.out
 ├── train.py                                    训练文件
+├── requirements.txt                            pip环境
 ├── utils                                       bert4keras工具包，也可pip下载
 │   ├── __init__.py
 │   ├── __pycache__
@@ -95,6 +99,16 @@ ATTENTION:
 └── weights                                     保存的权重
     ├── yidu_albert_tiny_ep15.h5
     └── yidu_albert_tiny_ep16.h5
+```
+
+## Requirements
+
+```
+Keras==2.2.4
+matplotlib==3.4.0
+pandas==1.2.3
+tensorflow==1.14.0
+tqdm==4.61.2
 ```
 
 ## Steps
@@ -145,7 +159,7 @@ ALBERT权重使用经过转换brightmart版的albert权重。[下载连接](http
 
 ## Config
 
-- `maxlen` 最大单句长度，少于填充，多于截断
+- `maxlen` 训练中每个batch的最大单句长度，少于填充，多于截断
 - `epochs` 最大训练轮次
 - `batch_size` batch size
 - `bert_layers` bert层数，albert ≤ 4
@@ -154,6 +168,8 @@ ALBERT权重使用经过转换brightmart版的albert权重。[下载连接](http
 - `dropout_rate` dropout比率
 - `max_lr` warmup最大的学习率，bert_layers越大应该越小
 - `lstm_hidden_units` lstm隐藏层数量
+
+ATTENTION: 并非所有句子都要填充到同一个长度，要求每个batch内的每个样本长度一致即可。所以若batch中最大长度 ≤ maxlen，则该batch将填充or截断到最长句子长度，若batch中最大长度 ≥ maxlen，则该batch将填充or截断到config.py中的maxlen
 
 ## Train
 
@@ -238,6 +254,8 @@ evaluate_one(weights_path, file_path)
 
 weights_path是权重路径，file_path是评估数据集路径
 
+ATTENTION: 1个batch只进1条句子，所以可以无视train的maxlen，但是tokenize后长于`albert_tiny_google_zh/albert_config.json`中的`max_position_embeddings`的部分将无法被预测，也不会被算进P里
+
 ## Performance
 
 ### 验证集表现
@@ -272,9 +290,11 @@ finaltestset:  f1: 0.80841, precision: 0.80942, recall: 0.80740
 ## Predict
 
 ```python
+# segment_ids后面长于512的部分将被截断，无法预测
 txt = '，缘于入院前4月余于我院诊断为直肠癌，于2016-01-21在全麻上行腹腔镜上直肠癌姑息性切除术DIXON，，术后病理：（201602459）1、（直肠），：肠溃疡型管状腺癌II级，侵及外膜层。'
-predict(txt = txt,
-        save_file_path = weights_path + '/yidu_albert_tiny_ep15.h5')
+for i in predict(txt = txt,
+                 save_file_path = weights_path + '/yidu_albert_tiny_ep15.h5'):
+    print(i)
 ```
 
 txt为输入文本，save_file_path为使用权重的路径
@@ -293,3 +313,5 @@ txt为输入文本，save_file_path为使用权重的路径
 ```
 
 输出格式为`(实体, 类别, 起始坐标, 终止坐标)`
+
+ATTENTION: 1个batch只进1条句子，所以可以无视train的maxlen，但是tokenize后长于`albert_tiny_google_zh/albert_config.json`中的`max_position_embeddings`的部分将无法被预测

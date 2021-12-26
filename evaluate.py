@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 
 from model import ALBERT
 from path import BASE_CONFIG_NAME, BASE_CKPT_NAME, BASE_MODEL_DIR, train_file_path, test_file_path, val_file_path, \
-    weights_path, event_type, MODEL_TYPE, f1_report_path, fig_path, label_dict_path
+    weights_path, label_dict_path
 from preprocess import load_data, NamedEntityRecognizer
 from utils.plot import f1_plot
 
@@ -79,7 +79,6 @@ def evaluate_all(dir):
     # 标注数据
     test_data = load_data(test_file_path, categories)
     val_data = load_data(val_file_path, categories)
-    categories = list(sorted(categories))
     
     # 建立分词器
     tokenizer = Tokenizer(dict_path, do_lower_case = True)
@@ -159,9 +158,9 @@ def evaluate_one(save_file_path, dataset_path, title):
 
 
 if __name__ == '__main__':
-    # evaluate_all(weights_path)
+    evaluate_all(weights_path)
     
     # evaluate_one(weights_path + '/yidu_albert_tiny_ep15.h5', "./data/yidu.submit", "finaltestset")
     # evaluate_one(weights_path + '/yidu_albert_tiny_ep16.h5', "./data/yidu.submit", "finaltestset")
     
-    evaluate_one(weights_path + '/yidu_albert_tiny_ep15.h5', "./data/yidu.validate", "validate")
+    # evaluate_one(weights_path + '/yidu_albert_tiny_ep15.h5', "./data/yidu.validate", "validate")

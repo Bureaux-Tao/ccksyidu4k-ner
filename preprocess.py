@@ -1,4 +1,6 @@
 import numpy as np
+
+from config import maxlen
 from utils.snippets import sequence_padding, DataGenerator
 from utils.snippets import open, ViterbiDecoder, to_array
 
@@ -33,7 +35,7 @@ class data_generator(DataGenerator):
     """数据生成器
     """
     
-    def __init__(self, data, batch_size, tokenizer, categories, maxlen):
+    def __init__(self, data, batch_size, tokenizer, categories, maxlen = maxlen):
         super().__init__(data = data, batch_size = batch_size)
         self.tokenizer = tokenizer
         self.categories = categories
@@ -62,6 +64,8 @@ class data_generator(DataGenerator):
                 batch_token_ids = sequence_padding(batch_token_ids)
                 batch_segment_ids = sequence_padding(batch_segment_ids)
                 batch_labels = sequence_padding(batch_labels)
+                # 要求每个batch内的每个样本长度一致
+                # sequence_padding皆不需要填充到maxlen，只需到batch内最大长度，若batch内最大长度>maxlen即需截断
                 yield [batch_token_ids, batch_segment_ids], batch_labels
                 batch_token_ids, batch_segment_ids, batch_labels = [], [], []
 
@@ -77,11 +81,16 @@ class NamedEntityRecognizer(ViterbiDecoder):
         super().__init__(trans = trans, starts = starts, ends = ends)
     
     def recognize(self, text):
-        tokens = self.tokenizer.tokenize(text, maxlen = 512)
+        tokens = self.tokenizer.tokenize(text, maxlen = 512)  # 512:bert max_position_embeddings
         mapping = self.tokenizer.rematch(text, tokens)
         token_ids = self.tokenizer.tokens_to_ids(tokens)
         segment_ids = [0] * len(token_ids)
         token_ids, segment_ids = to_array([token_ids], [segment_ids])
+        # print("batch_token_ids shape: shape:", token_ids.shape)
+        # print("batch_segment_ids shape:", segment_ids.shape, '\n')
+        # token_ids: (1, 512)
+        # segment_ids: (1, 512)
+        # 1个batch只进1条，可以无视train的maxlen，但是tokenize后长于max_position_embeddings的部分将无法被预测
         nodes = self.model.predict([token_ids, segment_ids])[0]
         labels = self.decode(nodes)
         entities, starting = [], False
@@ -96,4 +105,5 @@ class NamedEntityRecognizer(ViterbiDecoder):
                     starting = False
             else:
                 starting = False
-        return [(mapping[w[0]][0], mapping[w[-1]][-1], l) for w, l in entities]
+        st_entities = [(mapping[w[0]][0], mapping[w[-1]][-1], l) for w, l in entities]
+        return st_entities
