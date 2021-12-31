@@ -79,6 +79,8 @@ def evaluate_all(dir):
     # 标注数据
     test_data = load_data(test_file_path, categories)
     val_data = load_data(val_file_path, categories)
+
+    categories = list(sorted(categories))
     
     # 建立分词器
     tokenizer = Tokenizer(dict_path, do_lower_case = True)
