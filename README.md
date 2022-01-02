@@ -83,6 +83,8 @@ ATTENTION:
 ├── report                                      评估报告，由evaluate.py生成
 │   ├── f1.csv                                  每轮保存模型的总体F1
 │   ├── final_test_set.out
+│   ├── yidu_albert_tiny_ep15.csv               最好的一轮每个类别的F1
+│   ├── categroies.out
 │   └── nohup_evaluate.out
 ├── train.py                                    训练文件
 ├── requirements.txt                            pip环境
@@ -262,18 +264,6 @@ evaluate_one(save_file_path = weights_path + '/yidu_albert_tiny_ep15.h5',
 
 `save_file_path`，`dataset_path`是评估数据集路径，`evaluate_categories_f1`为是否评估每个类别的F1（时间会比评估总的F1长很多），`csv_path`是每类F1数据生成的csv文件存放路径。
 
-每的类别F1评测结果：
-
-```
-             TP  TP+FP  TP+FN  precision  recall      f1
-ANATOMY    2634   3222   3094     0.8175  0.8513  0.8341
-DISEASE    1022   1310   1323     0.7802  0.7725  0.7763
-DRUG        395    450    485     0.8778  0.8144  0.8449
-OPERATION   129    154    162     0.8377  0.7963  0.8165
-TESTIMAGE   293    342    348     0.8567  0.8420  0.8493
-TESTLAB     373    509    590     0.7328  0.6322  0.6788
-```
-
 ATTENTION: 1个batch只进1条句子，所以可以无视train的maxlen，但是tokenize后长于`albert_tiny_google_zh/albert_config.json`中的`max_position_embeddings`的部分将无法被预测，也不会被算进P里
 
 ## Performance
@@ -305,6 +295,18 @@ test:  f1: 0.83990, precision: 0.84533, recall: 0.83454
 ```
 100%|███████████████████████████████████████████████████████████| 2035/2035 [00:55<00:00, 36.50it/s]
 finaltestset:  f1: 0.80841, precision: 0.80942, recall: 0.80740
+```
+
+### 官方提供的379条测试样本表现每的类别F1评测结果
+
+```
+             TP  TP+FP  TP+FN  precision  recall      f1
+ANATOMY    2634   3222   3094     0.8175  0.8513  0.8341
+DISEASE    1022   1310   1323     0.7802  0.7725  0.7763
+DRUG        395    450    485     0.8778  0.8144  0.8449
+OPERATION   129    154    162     0.8377  0.7963  0.8165
+TESTIMAGE   293    342    348     0.8567  0.8420  0.8493
+TESTLAB     373    509    590     0.7328  0.6322  0.6788
 ```
 
 ## Predict
