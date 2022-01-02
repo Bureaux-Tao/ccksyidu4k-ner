@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/yidu_albert_tiny_ep15.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

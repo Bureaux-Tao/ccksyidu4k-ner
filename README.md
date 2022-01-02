@@ -214,7 +214,12 @@ Epoch 00043: early stopping
 
 ### 策略
 
-实体级别的F1，抽取到的每个实体的label、在每句中的起始坐标、终止坐标都正确才算对
+评估策略为实体级别的F1，抽取到的每个实体的label、在每句中的起始坐标、终止坐标都正确才算对
+
+可以评估：
+
+- 总的F1：所有类别一起统计，TP为所有label、起始坐标、终止坐标都正确的个数，TP+FP为预测实体总数，TP+FN为真实实体总数 
+- 每类的F1：分类统计，TP为每个列别的起始坐标、终止坐标都正确的个数，TP+FP为每个类别的预测实体总数，TP+FN为每个类别的真实实体总数
 
 ### 评估所有保存的模型
 
@@ -249,10 +254,25 @@ test:  f1: 0.82405, precision: 0.82246, recall: 0.82565
 ### 评估单个模型
 
 ```python
-evaluate_one(weights_path, file_path)
+evaluate_one(save_file_path = weights_path + '/yidu_albert_tiny_ep15.h5',
+             dataset_path = "./data/yidu.submit",
+             csv_path = './report/yidu_albert_tiny_ep15.csv',
+             evaluate_categories_f1 = True)
 ```
 
-weights_path是权重路径，file_path是评估数据集路径
+`save_file_path`，`dataset_path`是评估数据集路径，`evaluate_categories_f1`为是否评估每个类别的F1（时间会比评估总的F1长很多），`csv_path`是每类F1数据生成的csv文件存放路径。
+
+每的类别F1评测结果：
+
+```
+             TP  TP+FP  TP+FN  precision  recall      f1
+ANATOMY    2634   3222   3094     0.8175  0.8513  0.8341
+DISEASE    1022   1310   1323     0.7802  0.7725  0.7763
+DRUG        395    450    485     0.8778  0.8144  0.8449
+OPERATION   129    154    162     0.8377  0.7963  0.8165
+TESTIMAGE   293    342    348     0.8567  0.8420  0.8493
+TESTLAB     373    509    590     0.7328  0.6322  0.6788
+```
 
 ATTENTION: 1个batch只进1条句子，所以可以无视train的maxlen，但是tokenize后长于`albert_tiny_google_zh/albert_config.json`中的`max_position_embeddings`的部分将无法被预测，也不会被算进P里
 

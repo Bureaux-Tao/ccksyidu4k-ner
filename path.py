@@ -11,6 +11,7 @@ f1_report_path = proj_path + "/report/f1.csv"
 log_path = proj_path + "/log/train_log.csv"
 fig_path = proj_path + "/images"
 label_dict_path = proj_path + "/data/%s_catagory.pkl" % event_type
+categories_f1_path = proj_path + "/report/categories_f1.csv"
 
 # NER
 train_file_path = proj_path + "/data/%s.train" % event_type
