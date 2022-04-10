@@ -1,0 +1,9 @@
+maxlen = 300
+epochs = 999
+batch_size = 64
+bert_layers = 12
+crf_lr_multiplier = 1000  # 必要时扩大CRF层的学习率
+model_type = 'roformer_v2'
+dropout_rate = 0.1
+max_lr = 1e-5
+lstm_hidden_units = 128
