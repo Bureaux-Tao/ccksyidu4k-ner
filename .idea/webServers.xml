@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="fb160272-0942-419e-87dd-a353536a93b5" name="NamedEntityRecognization">
+        <fileTransfer accessType="SFTP" host="180.169.131.147" port="22" sshConfigId="03272ad8-3c65-4cd1-95f0-0886d605abb3" sshConfig="bureaux@180.169.131.147:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

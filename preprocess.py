@@ -5,7 +5,7 @@ from utils.snippets import sequence_padding, DataGenerator
 from utils.snippets import open, ViterbiDecoder, to_array
 
 
-def load_data(filename, categories):
+def load_data(filename, categories, type = "chip"):
     """加载数据
     单条格式：[text, (start, end, label), (start, end, label), ...]，
               意味着text[start:end + 1]是类型为label的实体。
@@ -13,21 +13,34 @@ def load_data(filename, categories):
     D = []
     with open(filename, encoding = 'utf-8') as f:
         f = f.read()
-        for l in f.split('\n\n'):
-            # print(l)
-            if not l:
-                continue
-            d = ['']
-            for i, c in enumerate(l.split('\n')):
-                char, flag = c.split('\t')
-                d[0] += char
-                if flag[0] == 'B':
-                    d.append([i, i, flag[2:]])
-                    categories.add(flag[2:])
-                elif flag[0] == 'I':
-                    # print(d) # 在此报错是因为BIO的缘故！
-                    d[-1][1] = i
-            D.append(d)
+        if type == "bio":
+            for l in f.split('\n\n'):
+                # print(l)
+                if not l:
+                    continue
+                d = ['']
+                for i, c in enumerate(l.split('\n')):
+                    char, flag = c.split('\t')
+                    d[0] += char
+                    if flag[0] == 'B':
+                        d.append([i, i, flag[2:]])
+                        categories.add(flag[2:])
+                    elif flag[0] == 'I':
+                        # print(d) # 在此报错是因为BIO的缘故！
+                        d[-1][1] = i
+                D.append(d)
+        elif type == "chip":
+            for l in f.split("\n"):
+                if not l:
+                    continue
+                d = ['']
+                for i, item in enumerate(l.strip("|||").split("|||")):
+                    if i == 0:
+                        d[0] += item
+                    else:
+                        d.append([int(item.split("    ")[0]), int(item.split("    ")[1]), item.split("    ")[2]])
+                        categories.add(item.split("    ")[2])
+                D.append(d)
     return D
 
 

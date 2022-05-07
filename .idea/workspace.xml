@@ -5,53 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="626a281e-0f78-4eb9-9469-6e0d7f35140d" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/NamedEntityRecognization.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/albert_tiny.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/remote-mappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/albert_tiny_google_zh/albert_config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/albert_tiny_google_zh/albert_model.ckpt.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/albert_tiny_google_zh/albert_model.ckpt.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/albert_tiny_google_zh/checkpoint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/albert_tiny_google_zh/vocab.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/yidu.submit" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/yidu.test" beforeDir="false" afterPath="$PROJECT_DIR$/data/yidu.test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/yidu.validate" beforeDir="false" afterPath="$PROJECT_DIR$/data/yidu.validate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/yidu_catagory.pkl" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/remote-mappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chip.train" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/chip.validate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/chip.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/NamedEntityRecognization.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NamedEntityRecognization.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluate.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/test_f1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/images/train_acc.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/images/train_loss.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/images/val_f1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/nohup_train.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_log.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_loss.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/val_f1.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/path.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/categroies.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/f1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/final_test_set.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/nohup_evaluate.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/yidu_albert_tiny_ep15.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/yidu_albert_tiny_ep16.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistic.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/adversarial.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/adversarial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/backend.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/backend.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/layers.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/layers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/optimizers.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/optimizers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/plot.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/snippets.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/snippets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weights/yidu_albert_tiny_ep15.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weights/yidu_albert_tiny_ep16.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocess.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,30 +38,71 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="27LFq9lTgR3bspJNCu2Zpj2aqJy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.statistic">
+  <component name="RunManager" selected="Python.train">
+    <configuration name="evaluate" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NamedEntityRecognization" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/evaluate.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NamedEntityRecognization" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="statistic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NamedEntityRecognization" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -124,19 +138,37 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.statistic" />
+      <item itemvalue="Python.train" />
+      <item itemvalue="Python.model" />
+      <item itemvalue="Python.evaluate" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.statistic" />
         <item itemvalue="Python.train" />
+        <item itemvalue="Python.evaluate" />
+        <item itemvalue="Python.model" />
+        <item itemvalue="Python.statistic" />
       </list>
     </recent_temporary>
   </component>
@@ -149,14 +181,14 @@
       <option name="presentableId" value="Default" />
       <updated>1649091649915</updated>
       <workItem from="1649091655927" duration="9332000" />
+      <workItem from="1649773940694" duration="6925000" />
+      <workItem from="1651504862776" duration="153000" />
+      <workItem from="1651924741385" duration="399000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -166,11 +198,23 @@
           <line>111</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/preprocess.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/preprocess.py</url>
+          <line>81</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/NamedEntityRecognization$model.coverage" NAME="model 覆盖结果" MODIFIED="1649776894188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NamedEntityRecognization$evaluate.coverage" NAME="evaluate 覆盖结果" MODIFIED="1649825507637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NamedEntityRecognization$statistic.coverage" NAME="statistic 覆盖结果" MODIFIED="1649172187190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NamedEntityRecognization$train.coverage" NAME="train 覆盖结果" MODIFIED="1649171744612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NamedEntityRecognization$train.coverage" NAME="train 覆盖结果" MODIFIED="1651504923178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

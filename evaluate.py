@@ -148,7 +148,7 @@ def evaluate_one(save_file_path, dataset_path, csv_path = categories_f1_path, ev
 
 if __name__ == '__main__':
     
-    evaluate_one(save_file_path = weights_path + '/yidu_roformer_v2_base.h5',
-                 dataset_path = "./data/yidu.test",
-                 csv_path = './report/yidu_bert_base.csv',
+    evaluate_one(save_file_path = weights_path + '/chip_roformer_v2_base.h5',
+                 dataset_path = "./data/chip.validate",
+                 csv_path = './report/chip_bert_base.csv',
                  evaluate_categories_f1 = True)

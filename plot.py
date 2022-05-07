@@ -1,7 +1,7 @@
 import pandas as pd
 from matplotlib import pyplot as plt
 
-from path import fig_path, log_path, f1_report_path
+from path import fig_path, log_path, f1_report_path, event_type
 
 
 def train_plot(history, epoch):
@@ -17,7 +17,7 @@ def train_plot(history, epoch):
     plt.xlabel("epoch")
     plt.ylabel("loss")
     plt.legend()
-    plt.savefig(fig_path + "/train_loss.png")
+    plt.savefig(fig_path + "/" + event_type + "_train_loss.png")
     plt.show()
     
     # 精度
@@ -25,10 +25,10 @@ def train_plot(history, epoch):
     plt.xlabel("epoch")
     plt.ylabel("acc")
     plt.legend()
-    plt.savefig(fig_path + "/train_acc.png")
+    plt.savefig(fig_path + "/" + event_type + "_train_acc.png")
     plt.show()
     
-    train_process.to_csv(log_path + "/train_loss.csv")
+    train_process.to_csv(log_path + "/" + event_type + "_train_loss.csv")
 
 
 def f1_plot(data):
@@ -43,7 +43,7 @@ def f1_plot(data):
     plt.xlabel("epoch")
     plt.ylabel("f1")
     plt.legend()
-    plt.savefig(fig_path + "/val_f1.png")
+    plt.savefig(fig_path + "/" + event_type + "_val_f1.png")
     plt.show()
     
-    pd_f1.to_csv(log_path + "/val_f1.csv", encoding = 'utf-8')
+    pd_f1.to_csv(log_path + "/" + event_type + "_val_f1.csv", encoding = 'utf-8')

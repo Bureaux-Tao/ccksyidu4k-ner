@@ -65,6 +65,7 @@ class BERT:
         lstm = SetLearningRate(
             Bidirectional(LSTM(lstm_hidden_units,
                                return_sequences = True,
+                               recurrent_dropout = dropout_rate,
                                kernel_initializer = 'he_normal')),
             100, True
         )(bert_output)
@@ -74,14 +75,14 @@ class BERT:
             axis = -1
         )  # [batch_size, seq_length, lstm_units * 2 + 768]
         
-        x = keras.layers.TimeDistributed(
-            keras.layers.Dropout(dropout_rate))(x)
-        
         x = SetLearningRate(
             TimeDistributed(Dense(len(categories) * 2 + 1, activation = 'relu',
                                   kernel_initializer = 'he_normal')),
             100, True
         )(x)
+        
+        x = keras.layers.TimeDistributed(
+            keras.layers.Dropout(dropout_rate))(x)
         
         self.CRF = ConditionalRandomField(lr_multiplier = crf_lr_multiplier)
         final_output = self.CRF(x)
