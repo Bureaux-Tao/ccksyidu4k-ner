@@ -1,6 +1,6 @@
 maxlen = 300
 epochs = 999
-batch_size = 64
+batch_size = 16
 bert_layers = 12
 crf_lr_multiplier = 1000  # 必要时扩大CRF层的学习率
 model_type = 'roformer_v2'

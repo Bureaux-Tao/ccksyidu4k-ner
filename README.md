@@ -217,13 +217,13 @@ Epoch 00018: early stopping THR
 valid:  f1: 0.87693, precision: 0.86916, recall: 0.88485, best f1: 0.87753
 ```
 
-验证集crf loss
+训练集crf loss
 
-![](images/train_loss.png)
+![](images/yidu_train_loss.png)
 
 训练集crf acc:
 
-![](images/train_acc.png)
+![](images/yidu_train_acc.png)
 
 ### Evaluate
 
@@ -254,7 +254,7 @@ ATTENTION: 1个batch只进1条句子，所以可以无视train的maxlen，但是
 
 ### 测试集表现
 
-![](images/val_f1.png)
+![](images/yidu_val_f1.png)
 
 ### 验证集最佳F1
 

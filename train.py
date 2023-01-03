@@ -94,12 +94,12 @@ train_generator = data_generator(train_data, batch_size, tokenizer, categories, 
 valid_generator = data_generator(val_data, batch_size, tokenizer, categories, maxlen)
 # test_generator = data_generator(test_data, batch_size, tokenizer, categories, maxlen)
 
-for i, item in enumerate(train_generator):
-    print("\nbatch_token_ids shape: shape:", item[0][0].shape)
-    print("batch_segment_ids shape:", item[0][1].shape)
-    print("batch_labels shape:", item[1].shape)
-    if i == 4:
-        break
+# for i, item in enumerate(train_generator):
+#     print("\nbatch_token_ids shape: shape:", item[0][0].shape)
+#     print("batch_segment_ids shape:", item[0][1].shape)
+#     print("batch_labels shape:", item[1].shape)
+#     if i == 4:
+#         break
 # batch_token_ids: (32, maxlen) or (32, n), n <= maxlen
 # batch_segment_ids: (32, maxlen) or (32, n), n <= maxlen
 # batch_labels: (32, maxlen) or (32, n), n <= maxlen

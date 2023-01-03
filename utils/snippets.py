@@ -504,6 +504,7 @@ class ViterbiDecoder(object):
             idxs = M.argmax(0)
             scores = M.max(0).reshape((-1, 1))
             paths = np.concatenate([paths[:, idxs], labels], 0)
+            print()
 
         # 最优路径
         return paths[:, scores[:, 0].argmax()]

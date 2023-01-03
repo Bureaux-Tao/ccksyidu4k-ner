@@ -5,7 +5,7 @@ from utils.snippets import sequence_padding, DataGenerator
 from utils.snippets import open, ViterbiDecoder, to_array
 
 
-def load_data(filename, categories, type = "chip"):
+def load_data(filename, categories, type = "bio"):
     """加载数据
     单条格式：[text, (start, end, label), (start, end, label), ...]，
               意味着text[start:end + 1]是类型为label的实体。

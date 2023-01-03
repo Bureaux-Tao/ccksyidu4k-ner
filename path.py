@@ -1,8 +1,8 @@
 import os
 
 # event_type = "pulmonary"
-# event_type = "yidu"
-event_type = "chip"
+event_type = "yidu"
+# event_type = "chip"
 
 current_dir = os.path.dirname(os.path.abspath(__file__))  # 获取当前地址
 proj_path = current_dir
